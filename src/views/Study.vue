@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="text-center">
     <div class="text-3xl text-center">{{ currentQuestion + 1 }} / {{ cards.length }}</div>
-    <Card/>
+    <Card :Answer="cards[currentQuestion].correct[0]" :answers="cards[currentQuestion].choices" :Question="cards[currentQuestion].question" :buildMode="false" :multChoice="true"/>
+    <button class="rounded bg-blue-400 text-white border-none px-16 py-4 text-lg" @click="nextBtn()">Next</button>
   </div>
 </template>
 
@@ -22,6 +23,12 @@ export default {
       cards: [],
     }
   },
+  methods : {
+    nextBtn()
+    {
+      this.currentQuestion += 1
+    }
+  },
   
   mounted() {
     axios.get(connection + `sections/${this.$route.params.name.toLowerCase()}/study`).then((request) => {
@@ -30,6 +37,7 @@ export default {
         state.name = 'Studying'
       })
       this.cards = request.data.cards
+      console.log(this.cards)   
     })
   }
 }
