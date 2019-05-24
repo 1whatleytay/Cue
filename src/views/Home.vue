@@ -1,31 +1,16 @@
 <template>
   <div>
-<<<<<<< HEAD
     <div></div>
     <img src="">
     <div class="text-center text-white text-5xl bg-blue-800 mt-12">
-      QCard
-=======
-    <div class="text-center text-white text-5xl bg-red-500 mt-12">
-      My Center
->>>>>>> e02c6aa7483354a052dc17901d388f64785f057d
+      QCards
     </div>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
-    <Card Question="superfluous" Answer="Smith"/>
+    <div class="bg-red-200" @click="onPressed()">
+      BuildMode Toggle {{build}}
+    </div>
+    <Card Question="superfluous" Answer="Smith" :buildMode="build"/>
+
+  
   </div>
 </template>
 
@@ -36,9 +21,15 @@ export default {
   name: 'home',
   components: {Card},
 
+  methods: {
+    onPressed(){
+    this.build = !this.build  
+    }
+  },
   data() {
     return {
-      john: "Hello"
+      john: "Hello",
+      build: false
     }
   },
 }
