@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card :builderMode="true"/>
+    <Card :multChoice="true" :builderMode="true"/>
   </div>
 </template>
 
