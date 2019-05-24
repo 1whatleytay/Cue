@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Section from './views/Section.vue'
 import Study from './views/Study.vue'
+import Builder from './views/Builder.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/study/:name',
       name: 'study',
       component: Study
+    },
+    {
+      path: '/builder/:name',
+      name: 'builder',
+      component: Builder
     }
   ]
 })

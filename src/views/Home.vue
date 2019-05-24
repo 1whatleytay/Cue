@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="text-center second mb-8">
-      <div class="text-3xl second">Get Started!</div>
-      <div class="text-md second">Pick a subject from one of the following.</div>
+      <div class="focus-point second">Get Started!</div>
+      <div class="text-lg second">Pick a subject from one of the following.</div>
     </div>
     <div class="w-auto mx-12">
       <Subject v-for="(subject, index) in subjects" v-bind:key="index"
@@ -55,3 +55,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.focus-point {
+  font-size: 8rem;
+}
+</style>

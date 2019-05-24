@@ -1,13 +1,14 @@
 <template>
   <div v-bind:class="[ `bg-${color}` ]"
-    class="w-1/3 h-64 text-white text-3xl rounded-lg mx-auto cursor-pointer" @click="jump()">
-    <div class="mt-24">{{ name }}</div>
+    class="w-full text-white text-3xl rounded-lg mx-auto cursor-pointer py-24 p-2" @click="jump()">
+    <div class="text-4xl">{{ name }}</div>
+    <div class="text-md">by {{ author }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'name', 'color' ],
+  props: [ 'name', 'color', 'author' ],
 
   methods: {
     jump() {
