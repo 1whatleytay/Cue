@@ -1,11 +1,13 @@
 <template>
   <div v-if="info" class="text-center">
     <button v-bind:class="[ `bg-${info.color}` ]"
-      class="w-64 h-16 rounded text-white text-3xl border-none" @click="startStudying()">Study</button>
+      class="w-64 h-16 rounded text-white text-3xl border-none cursor-pointer"
+      @click="startStudying()">Study</button>
     <div class="my-8 text-6xl">Popular Cards</div>
     <div class="flex flex-wrap">
-      <LinkCard v-for="(card, index) in info.cards" v-bind:key="index"
-        :name="card.question" :color="info.color"/>
+      <div v-for="(card, index) in info.cards" v-bind:key="index" class="w-1/4 mx-auto p-4">
+        <LinkCard :name="card.question" :color="info.color" :author="card.creatorName"/>
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +42,7 @@ export default {
 
   methods: {
     startStudying() {
+      this.$router.push(`/study/${this.info.name}`)
     }
   }
 }
