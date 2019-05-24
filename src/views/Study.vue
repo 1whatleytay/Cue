@@ -24,14 +24,12 @@ export default {
   },
   
   mounted() {
-    onSet((state) => {
-      state.color = 
-      state.name = `Studying for ${this.$route.params.name}`
-    })
-
     axios.get(connection + `sections/${this.$route.params.name.toLowerCase()}/study`).then((request) => {
-      this.cards = request.data
-      console.log(this.cards)
+      onSet((state) => {
+        state.color = request.data.color
+        state.name = 'Studying'
+      })
+      this.cards = request.data.cards
     })
   }
 }
