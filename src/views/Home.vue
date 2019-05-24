@@ -1,25 +1,28 @@
 <template>
   <div>
-    <div></div>
-    <img src="">
-    <div class="text-center text-white text-5xl bg-blue-800 mt-12">
-      QCards
+    <div class="text-center second mb-8">
+      <div class="text-3xl second">Get Started!</div>
+      <div class="text-md second">Pick a subject from one of the following.</div>
     </div>
-    <div class="bg-red-200" @click="onPressed()">
-      BuildMode Toggle {{build}}
+    <div class="w-auto mx-12">
+      <Subject v-for="(subject, index) in subjects" v-bind:key="index"
+        :title="subject.name" :color="subject.color" :source="makeImageURL(subject.name)"/>
     </div>
-    <Card Question="superfluous" Answer="Smith" :buildMode="build"/>
-
-  
   </div>
 </template>
 
 <script>
+import { onSet, NavState } from '../nav'
+
 import Card from "../components/Card.vue"
+import Subject from "../components/Subject.vue"
+
+import connection from '../config.js'
+import axios from "axios"
 
 export default {
   name: 'home',
-  components: {Card},
+  components: { Card, Subject },
 
   methods: {
     onPressed(){
@@ -28,9 +31,25 @@ export default {
   },
   data() {
     return {
-      john: "Hello",
-      build: false
+      subjects: [],
     }
   },
+
+  mounted() {
+    onSet((state) => {
+      state.color = 'blue-500'
+      state.name = null
+    })
+
+    axios.get(connection + 'sections').then((request) => {
+      this.subjects = request.data;
+    });
+  },
+  
+  methods: {
+    makeImageURL(name) {
+      return `/images/${name.toLowerCase()}.jpg`
+    }
+  }
 }
 </script>
