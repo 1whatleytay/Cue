@@ -1,14 +1,7 @@
 <template>
-    <div class = "bg-white w-1/2 rounded h-300 text-4xl text-center mx-auto" @click = "onPress()" >
-        <br>
-        <br>
-        <br>
+    <div class = "w-1/2 rounded-lg h-auto text-4xl text-center mx-auto my-6 p-12 "
+        v-bind:class = "{'bg-green-500':displayAnswer, 'bg-red-400':!displayAnswer}" @click = "onPress()" >
         {{displayAnswer? Answer: Question}}
-        <br>
-        <br>
-        <br>
-
-        
     </div>
     
 
@@ -19,13 +12,15 @@ export default {
     props: [ "Question","Answer" ],
     methods: {
         onPress() {
-            console.log("press")
             this.displayAnswer = !this.displayAnswer
+            console.log(this.displayAnswer)
+            
         }
     },
     data() {
         return {
             displayAnswer: false
+
         }
     }
 

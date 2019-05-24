@@ -2,11 +2,25 @@
   <div>
     <div></div>
     <img src="">
-    <div class="text-center text-white text-5xl bg-red-500 mt-12">
-      My Center
+    <div class="text-center text-white text-5xl bg-blue-800 mt-12">
+      QCard
     </div>
-    <Card Question="john" Answer="Smith">
-    </Card>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
+    <Card Question="superfluous" Answer="Smith"/>
   </div>
 </template>
 
