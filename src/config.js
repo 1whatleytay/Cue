@@ -1,1 +1,1 @@
-export default "http://localhost:1642/"
+export default "http://10.145.246.92:1642/"

@@ -11,15 +11,12 @@ export class NavState {
 export function setState(newState) {
   state = newState
   listen(state)
-  console.log(state)
 }
 
 export function onSet(func) {
   if (state) {
     func(state)
-    console.log('call')
   } else {
     listen = func
-    console.log('listen')
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded border w-full text-white overflow-hidden my-4"
+  <div class="rounded border w-full text-white overflow-hidden my-4 cursor-pointer"
     v-bind:class="[`bg-${color}`, `border-${color}`]" @click="jump()">
     <div class="text-4xl second pl-8 py-4">{{ title }}</div>
     <div v-bind:style="{backgroundImage: `url('${source}')`}" class="w-full h-64 bkg-cover">
