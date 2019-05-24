@@ -1,5 +1,5 @@
 <template>
-    <div class= "ml-auto text-center rounded-lg bg-red-400 w-12 h-12" @click="onPressed()">
+    <div class= "ml-24 text-center rounded-lg bg-red-400 w-12 h-12" @click="onPressed()">
         +
     </div>
 </template>

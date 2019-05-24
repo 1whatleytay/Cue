@@ -8,7 +8,9 @@
       <Subject v-for="(subject, index) in subjects" v-bind:key="index"
         :title="subject.name" :color="subject.color" :source="makeImageURL(subject.name)"/>
     </div>
+    
   </div>
+  
 </template>
 
 <script>
