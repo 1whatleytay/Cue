@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import Section from './views/Section.vue'
 import Study from './views/Study.vue'
 import Builder from './views/Builder.vue'
+import Profile from './views/Profile.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/builder/:name',
       name: 'builder',
       component: Builder
+    },
+    {
+      path: '/profile/:id',
+      name: 'profile',
+      component: Profile
     }
   ]
 })
