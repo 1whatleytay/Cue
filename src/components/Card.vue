@@ -1,18 +1,21 @@
 <template>
-    <div class = "w-1/2 bg-gray-800 rounded-lg h-auto text-white text-4xl text-center mx-auto my-6 p-12 "
-        v-bind:class="{'bg-blue-400':buildMode,'bg-white':multChoice && !buildMode, }">
+    <div class="w-1/2 bg-gray-800 rounded-lg h-auto text-white text-4xl text-center mx-auto my-6 p-12"
+        v-bind:class="{'bg-blue-400':buildMode,'bg-white':multChoice && !buildMode}">
         <div v-if="buildMode">
-            <input class = " w-1/2 input-center rounded-lg text-3xl -mx-20 text-center" v-model="question">
-            <br>
-            <input class="w-1/4 mr-4" v-model="optionA">
-            <input class="w-1/4 ml-4" v-model="optionB">
-            <br>
-            <input class="w-1/4 mr-4" v-model="optionC">
-            <input class="w-1/4 ml-4" v-model="optionD">
-
-            <sub-btn  question="question" optionA="optionA" optionB="optionB" optionC="optionC" optionD="optionD" />
+            <input class="w-1/2 input-center text-gray rounded-lg text-4xl border-none -mx-20 text-center p-2 my-8" v-model="question">
+            <div class="py-4">
+                <input class="text-4xl rounded border-none w-1/4 mr-4 p-2" v-model="optionA">
+                <input class="text-4xl rounded border-none w-1/4 ml-4 p-2" v-model="optionB">
+            </div>
+            <div class="py-4">
+                <input class="text-4xl rounded border-none w-1/4 mr-4 p-2" v-model="optionC">
+                <input class="text-4xl rounded border-none w-1/4 ml-4 p-2" v-model="optionD">
+            </div>
+            <div class="py-4">
+                <input class="text-4xl text-green w-1/2 rounded border-none p-2" v-model="answer">
+            </div>
         </div>
-        <div v-if="!buildMode && multChoice">
+        <div v-if="!buildMode">
             <div class="w-1/2 rounded-lg text-4xl mx-auto text-center mb-4"> {{Question}} </div>
             <div class="py-2">
                 <button class="rounded inline bg-gray-600 w-1/4 mr-4 text-white text-2xl" v-bind:class = "{'bg-green-500':DisplayAnswerMC && answers[0] === Answer,'bg-red-500':DisplayAnswerMC && answers[0] !== Answer}" @click="btnClickChoice(answers[0])">{{answers[0]}}</button>
@@ -29,27 +32,31 @@
 <script>
 import connection from '../config'
 
-import SubBtn from "../components/SubBtn.vue"
-
 export default {
     name: 'Card',
-    components: {SubBtn},
 
     props: [ "Question","Answer","buildMode", "multChoice", "answers" ],
 
     data() {
         return {
-            question : '',
+            question : "",
             optionA : "",
             optionB : "",
             optionC : "",
             optionD : "",
+            answer: "",
             DisplayAnswerMC : false,
         }
     },
 
     mounted() {
         this.question = this.Question
+        this.answer = this.Answer
+
+        this.optionA = this.answers[0]
+        this.optionB = this.answers[1]
+        this.optionC = this.answers[2]
+        this.optionD = this.answers[3]
     },
 
     methods: {
