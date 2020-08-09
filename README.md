@@ -1,29 +1,8 @@
 # cue
 
-## Project setup
-```
-yarn install
-```
+Submitted to AP Hacks 2019 (not an MLH hackathon & doesn't have a website, you have to take my word :D).
+Teammates were [LunarCoffee](https://github.com/LunarCoffee), [AadityaChaudhary](https://github.com/AadityaChaudhary) and [Tifgy](https://github.com/tifgy).
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The project ended up winning!
+For me this was kinda a reinforcement of the skills I learned during TU20 Cup 2019.
+I'm not a big fan of the final product though, we didn't have a lot of time in the end (only 5 hours).
